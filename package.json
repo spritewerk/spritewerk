@@ -4,6 +4,7 @@
   "description": "A canvas game development kit",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --open"
   },

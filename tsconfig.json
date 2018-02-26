@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./play",
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,

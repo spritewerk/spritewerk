@@ -3,11 +3,11 @@ var path = require("path");
 
 module.exports = {
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./play",
     hot: true
   },
   devtool: "inline-source-map",
-  entry: "./src/index.ts",
+  entry: "./index.ts",
   module: {
     rules: [
       {
@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "play")
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
