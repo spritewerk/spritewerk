@@ -6,7 +6,7 @@ export default class Layer {
   private items:Sprite[];
   private inCamera:boolean = true;
   private listensForPress:boolean = true;
-  private isVisible:boolean = false;
+  private isVisible:boolean = true;
 
   constructor (options?:LayerOptions) {
     setOptions(this, options);

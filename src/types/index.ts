@@ -70,3 +70,8 @@ export interface SpriteOptions {
   x?:number;
   y?:number;
 }
+
+export interface ViewOptions {
+  hitRectAlpha:number;
+  hitRectColor:number;
+}

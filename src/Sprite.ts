@@ -9,7 +9,7 @@ export default class Sprite {
   private width:number = 0;
   private x:number = 0;
   private y:number = 0;
-  private visible:boolean = true;
+  private isVisible:boolean = true;
 
   private static idCounter:number = 0;
 
@@ -47,8 +47,8 @@ export default class Sprite {
     return this.id;
   }
 
-  public getVisible ():boolean {
-    return this.visible;
+  public getIsVisible ():boolean {
+    return this.isVisible;
   }
 
   public getWidth ():number {
@@ -64,16 +64,7 @@ export default class Sprite {
   }
 
   public render (context:CanvasRenderingContext2D, debug?:boolean):void {
-    if (debug) {
-      const oldFillStyle = context.fillStyle;
-      const oldAlpha = context.globalAlpha;
-      const hitRect = this.getHitRect();
-      context.fillStyle = "red";
-      context.globalAlpha = 0.4;
-      context.fillRect(hitRect.x, hitRect.y, hitRect.width, hitRect.height);
-      context.fillStyle = oldFillStyle;
-      context.globalAlpha = oldAlpha;
-    }
+    //
   }
 
   public setHeight (value:number):Sprite {
@@ -86,8 +77,8 @@ export default class Sprite {
     return this;
   }
 
-  public setVisible (value:boolean):Sprite {
-    this.visible = value;
+  public setIsVisible (value:boolean):Sprite {
+    this.isVisible = value;
     return this;
   }
 

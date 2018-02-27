@@ -45,6 +45,14 @@ export function getFitDimensions (elWidth:number, elHeight:number, winWidth:numb
   };
 }
 
+export function getObjectCount (obj:{ [key:string]:any }):number {
+  let count = 0;
+  for (let key in obj) {
+    count++;
+  }
+  return count;
+}
+
 export function getScaleFactor (canvas:HTMLCanvasElement):number {
   let factor:number = 1;
 
@@ -67,4 +75,21 @@ export function setOptions (object:any, options:any):void {
       object[key] = options[key];
     }
   } 
+}
+
+export function xhrGet (path:string, callback:(data:string) => any):void {
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", path, true);
+  xhr.onload = () => {
+    if (xhr.status >= 200 && xhr.status < 400) {
+      callback(xhr.responseText);
+    } else {
+      // TODO handle status
+    }
+  };
+  xhr.onerror = () => {
+    // TODO handle error
+  };
+  xhr.send();
 }
