@@ -64,7 +64,7 @@ export default class Sprite {
   }
 
   public render (context:CanvasRenderingContext2D, debug?:boolean):void {
-    //
+    // noop
   }
 
   public setHeight (value:number):Sprite {

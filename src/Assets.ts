@@ -81,6 +81,10 @@ export default class Assets {
     }
   }
 
+  public static getAllAudio():{ [key:string]:HTMLAudioElement } {
+    return this.audio;
+  }
+
   public static getAudio(key:string):HTMLAudioElement {
     return this.audio[key];
   }

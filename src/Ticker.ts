@@ -23,7 +23,6 @@ export default class Ticker {
 
     this.callback(delta);
     this.then = now;
-
     this.reqId = requestAnimationFrame(this.tick);
   }
 

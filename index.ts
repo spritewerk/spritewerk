@@ -31,6 +31,7 @@ Assets.load({
     console.log("sprite A!", e);
   });
 
+  Media.setVolume("music", 0.2);
   Media.playAudio("music");
 
   function update (delta:number) {
