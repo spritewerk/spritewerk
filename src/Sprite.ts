@@ -1,7 +1,7 @@
 import { SpriteOptions, Rectangle } from "./types";
 import { setOptions } from "./util";
 
-export default class Sprite {
+export default abstract class Sprite {
   private height:number = 0;
   private hitOffset:Rectangle = null;
   private id:number;

@@ -25,6 +25,13 @@ export interface EventsOptions {
   entities:Layer[];
 }
 
+export interface GameStateOptions {
+  bgColor?:string;
+  entities?:Layer[];
+  preload?:{ [key:string]:string };
+  props?:{ [key:string]:any };
+}
+
 export type Handler = (e?:EventObject) => any;
 
 export interface HandlerObject {

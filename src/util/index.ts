@@ -45,14 +45,6 @@ export function getFitDimensions (elWidth:number, elHeight:number, winWidth:numb
   };
 }
 
-export function getObjectCount (obj:{ [key:string]:any }):number {
-  let count = 0;
-  for (let key in obj) {
-    count++;
-  }
-  return count;
-}
-
 export function getScaleFactor (canvas:HTMLCanvasElement):number {
   let factor:number = 1;
 

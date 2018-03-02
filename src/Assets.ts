@@ -1,14 +1,14 @@
-import { getObjectCount, xhrGet } from "./util";
+import { xhrGet } from "./util";
 
 export default class Assets {
-  private static audio:{ [key:string]:HTMLAudioElement } = {};
-  private static images:{ [key:string]:HTMLImageElement } = {};
-  private static json:{ [key:string]:any } = {};
-  private static loadedCount:number;
-  private static totalCount:number;
-  private static callback:Function;
+  private audio:{ [key:string]:HTMLAudioElement } = {};
+  private images:{ [key:string]:HTMLImageElement } = {};
+  private json:{ [key:string]:any } = {};
+  private loadedCount:number;
+  private totalCount:number;
+  private callback:Function;
 
-  private static onAssetLoad ():void {
+  private onAssetLoad ():void {
     this.loadedCount++;
 
     if (this.loadedCount === this.totalCount) {
@@ -18,7 +18,7 @@ export default class Assets {
     }
   }
 
-  private static getType (path:string):string {
+  private getType (path:string):string {
     if (path.indexOf(".mp3") > 0 || path.indexOf(".wav") > 0 || path.indexOf(".ogv") > 0) {
       return "audio";
     } else if (path.indexOf(".png") > 0 || path.indexOf(".jpg") > 0 || path.indexOf(".jpeg") > 0 || path.indexOf(".gif") > 0) {
@@ -28,9 +28,9 @@ export default class Assets {
     }
   }
 
-  public static load (paths:any, callback:Function):void {
+  public load (paths:any, callback:Function):void {
     this.loadedCount = 0;
-    this.totalCount = getObjectCount(paths);
+    this.totalCount = Object.keys(paths).length;
     this.callback = callback;
 
     for (let key in paths) {
@@ -81,19 +81,19 @@ export default class Assets {
     }
   }
 
-  public static getAllAudio():{ [key:string]:HTMLAudioElement } {
+  public getAllAudio():{ [key:string]:HTMLAudioElement } {
     return this.audio;
   }
 
-  public static getAudio(key:string):HTMLAudioElement {
+  public getAudio(key:string):HTMLAudioElement {
     return this.audio[key];
   }
 
-  public static getImage(key:string):HTMLImageElement {
+  public getImage(key:string):HTMLImageElement {
     return this.images[key];
   }
 
-  public static getJson(key:string):any {
+  public getJson(key:string):any {
     return this.json[key];
   }
 }
