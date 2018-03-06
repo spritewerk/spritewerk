@@ -1,11 +1,39 @@
+import BitmapFont from "../BitmapFont";
 import Layer from "../Layer";
 import Sprite from "../Sprite";
+
+export interface BitmapOptions extends SpriteOptions {
+  image?:HTMLImageElement;
+  srcX?:number;
+  srcY?:number;
+}
+
+export interface BitmapTextOptions extends SpriteOptions {
+  value?:string;
+  size?:number;
+  maxWidth?:number;
+  lineHeight?:number;
+  font?:BitmapFont;
+}
 
 export interface CanvasOptions {
   fitToViewport?:boolean;
   height?:number;
   selector?:string;
   width?:number;
+}
+
+export interface CharData {
+  id:number;
+  x:number;
+  y:number;
+  width:number;
+  height:number;
+  xoffset:number;
+  yoffset:number;
+  xadvance:number;
+  page:number;
+  chnl:number;
 }
 
 export interface EventObject {

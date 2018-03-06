@@ -61,11 +61,11 @@ export default class StateMachine {
     }
   }
 
-	public getState():GameState {
-		return this.state;
+  public getState():GameState {
+    return this.state;
   }
 
-	public getIsLoading():boolean {
-		return this.isLoading;
-	}
+  public getIsLoading():boolean {
+    return this.isLoading;
+  }
 }

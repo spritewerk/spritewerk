@@ -1,28 +1,34 @@
 import Assets from "./src/Assets";
+import Bitmap from "./src/Bitmap";
+import BitmapFont from "./src/BitmapFont";
+import BitmapText from "./src/BitmapText";
 import Camera from "./src/Camera";
 import Canvas from "./src/Canvas";
 import Layer from "./src/Layer";
 import Events from "./src/Events";
 import Listeners from "./src/Listeners";
 import Media from "./src/Media";
-import Sprite from "./src/Sprite";
 import Ticker from "./src/Ticker";
 import View from "./src/View";
 
 const assets = new Assets();
 
-class Rect extends Sprite {}
-
 assets.load({
+  fontData: "./data/font.json",
+  fontImage: "./images/font.png",
   music: "./sounds/music.mp3"
 }, () => {
-  const spriteA = new Rect({ width: 128, height: 128,
-    hitOffset: { x: 8, y: 8, width: 112, height: 112 }
+  const font = new BitmapFont(assets.getJson("fontData"), assets.getImage("fontImage"));
+  const text = new BitmapText({
+    font,
+    maxWidth: 256,
+    x: 128,
+    y: 32,
+    value: "There was once text which wrapped, it was so beautiful to behold that it caused people's eyeballs to melt into their skulls."
   });
-  const spriteB = new Rect({ x: 128, width: 128, height: 128 });
   const layer = new Layer();
   const entities = [layer];
-  layer.add(spriteA, spriteB);
+  layer.add(text);
 
   const canvas = new Canvas({ fitToViewport: true });
   const camera = new Camera(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -31,13 +37,6 @@ assets.load({
   const media = new Media(assets);
   const ticker = new Ticker(update);
   const view = new View(canvas.getEl());
-
-  listeners.add(spriteA, "pressdown", e => {
-    console.log("sprite A!", e);
-  });
-
-  media.setVolume("music", 0.2);
-  media.playAudio("music");
 
   function update (delta:number) {
     listeners.handleEvents(events);

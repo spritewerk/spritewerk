@@ -43,7 +43,8 @@ export default class View {
               this.context.fillStyle = oldFillStyle;
               this.context.globalAlpha = oldAlpha;
             }
-            item.render(this.context, debug);
+            this.context.globalAlpha = item.getOpacity();
+            item.render(this.context);
           }
         });
       }

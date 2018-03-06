@@ -2,14 +2,14 @@ import { SpriteOptions, Rectangle } from "./types";
 import { setOptions } from "./util";
 
 export default abstract class Sprite {
-  private height:number = 0;
-  private hitOffset:Rectangle = null;
-  private id:number;
-  private opacity:number = 1;
-  private width:number = 0;
-  private x:number = 0;
-  private y:number = 0;
-  private isVisible:boolean = true;
+  protected height:number = 0;
+  protected hitOffset:Rectangle = null;
+  protected id:number;
+  protected isVisible:boolean = true;
+  protected opacity:number = 1;
+  protected width:number = 0;
+  protected x:number = 0;
+  protected y:number = 0;
 
   private static idCounter:number = 0;
 
@@ -51,6 +51,10 @@ export default abstract class Sprite {
     return this.isVisible;
   }
 
+  public getOpacity ():number {
+    return this.opacity;
+  }
+
   public getWidth ():number {
     return this.width;
   }
@@ -63,7 +67,7 @@ export default abstract class Sprite {
     return this.y;
   }
 
-  public render (context:CanvasRenderingContext2D, debug?:boolean):void {
+  public render (context:CanvasRenderingContext2D):void {
     // noop
   }
 
@@ -79,6 +83,11 @@ export default abstract class Sprite {
 
   public setIsVisible (value:boolean):Sprite {
     this.isVisible = value;
+    return this;
+  }
+
+  public setOpacity (value:number):Sprite {
+    this.opacity = value;
     return this;
   }
 
