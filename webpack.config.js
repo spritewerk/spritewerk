@@ -7,7 +7,7 @@ module.exports = {
     hot: true
   },
   devtool: "inline-source-map",
-  entry: "./index.ts",
+  entry: "./play/index.ts",
   module: {
     rules: [
       {

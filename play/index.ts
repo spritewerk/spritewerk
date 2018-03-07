@@ -1,15 +1,15 @@
-import Assets from "./src/Assets";
-import Bitmap from "./src/Bitmap";
-import BitmapFont from "./src/BitmapFont";
-import BitmapText from "./src/BitmapText";
-import Camera from "./src/Camera";
-import Canvas from "./src/Canvas";
-import Layer from "./src/Layer";
-import Events from "./src/Events";
-import Listeners from "./src/Listeners";
-import Media from "./src/Media";
-import Ticker from "./src/Ticker";
-import View from "./src/View";
+import Assets from "../src/Assets";
+import Bitmap from "../src/Bitmap";
+import BitmapFont from "../src/BitmapFont";
+import BitmapText from "../src/BitmapText";
+import Camera from "../src/Camera";
+import Canvas from "../src/Canvas";
+import Layer from "../src/Layer";
+import Events from "../src/Events";
+import Listeners from "../src/Listeners";
+import Media from "../src/Media";
+import Ticker from "../src/Ticker";
+import View from "../src/View";
 
 const assets = new Assets();
 
