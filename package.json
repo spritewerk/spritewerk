@@ -1,0 +1,35 @@
+{
+  "name": "spritewerk",
+  "version": "0.1.0",
+  "description": "A small, modern, modular game engine for the <canvas />",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "source-map-loader": "^0.2.3",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "serve": "npm run build && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spritewerk/spritewerk.git"
+  },
+  "keywords": [
+    "2d",
+    "canvas",
+    "game",
+    "game-development",
+    "typescript"
+  ],
+  "author": "Chris Peters <bildepunkt@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spritewerk/spritewerk/issues"
+  },
+  "homepage": "https://github.com/spritewerk/spritewerk#readme"
+}

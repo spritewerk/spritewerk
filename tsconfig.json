@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./play",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es5",
+    "moduleResolution": "node"
+  }
+}
